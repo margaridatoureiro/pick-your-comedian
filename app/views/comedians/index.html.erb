@@ -1,0 +1,11 @@
+
+<h1>Welcome to the funniest website on Earth</h1>
+<% @comedians.each do |comedian| %>
+<ul>
+  <li><%= comedian.name %></li>
+  <li><%= comedian.age %></li>
+  <li><%= comedian.content %></li>
+</ul>
+<% end %>
+
+
