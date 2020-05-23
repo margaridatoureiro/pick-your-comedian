@@ -2,7 +2,7 @@
 
 # top-level class comment
 class ComediansController < ApplicationController
-  before_action :fetch_comedian, only: %(show edit update destroy)
+  before_action :fetch_comedian, only: %i[show edit update destroy]
   def index
     @comedians = Comedian.all
   end
