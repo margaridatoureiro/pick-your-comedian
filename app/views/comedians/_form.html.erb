@@ -1,6 +1,10 @@
-<%= simple_form_for @comedian do |f| %>
-  <%= f.input :name %>
-  <%= f.input :age %>
-  <%= f.input :content %>
-  <%= f.submit %>
-<% end %>
+<div class="form-container">
+  <div class="form col-6 p-4" >
+    <%= simple_form_for @comedian do |f| %>
+      <%= f.input :name %>
+      <%= f.input :age %>
+      <%= f.input :content %>
+      <%= f.submit 'Bring your funny persona into this world', class: "btn btn-danger" %>
+    <% end %>
+  </div>
+</div>

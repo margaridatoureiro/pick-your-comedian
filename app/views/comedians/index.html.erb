@@ -2,8 +2,6 @@
   <% @comedians.each do |comedian| %>
   <ul>
     <li><%= comedian.name %></li>
-    <li><%= comedian.age %></li>
-    <li><%= comedian.content %></li>
     <li><%= link_to  "Delete #{comedian.name}", comedian_path(comedian), method: :delete, data: { confirm: "Are you sure?" } %></li>
   </ul>
   <% end %>
