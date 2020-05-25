@@ -1,21 +1,20 @@
 .banner {
-    background-image: url("https://s3-us-west-1.amazonaws.com/dkn-wp/wp-content/uploads/2018/03/10191721/BATMAN_TAS_POSTER_SEPS_1024x1024-740x431.jpg");
+    background-image: url("https://mightymega.com/wp-content/uploads/2013/09/28_reasons_gotham_city_l.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     height: 500px;
     align-content: center;
     .container {
-        width: 1200px;
+        width: 100%;
         margin: 0px auto;
-        font-weight: bold;
         text-align: center;
         color: white;
-        text-shadow: 2px 2px 4px #000000;
+        text-shadow: -2px 1px 5px black, 1px 2px 5px black, 2px 1px 5px black, 1px -2px 5px black;
         padding: 200px 0;
     }
     h1 {
-        font-size: 56px;
+        font-size: 75px;
     }
     h4 {
         font-size: 25px;
