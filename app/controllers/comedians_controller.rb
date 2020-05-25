@@ -45,6 +45,6 @@ class ComediansController < ApplicationController
   end
 
   def comedian_params
-    params.require(:comedian).permit(:name, :age, :content)
+    params.require(:comedian).permit(:name, :age, :content, :photo)
   end
 end

@@ -1,13 +1,17 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: $forestgreen;
+}
+
 .navbar-lewagon {
-  justify-content: space-between;
-  background: white;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
-
+    justify-content: space-between;
+  }
+  
+  .navbar-lewagon .navbar-collapse {
+    flex-grow: 0;
+  }
+  
+  .navbar-lewagon .navbar-brand img {
+    width: 40px;
+  }
