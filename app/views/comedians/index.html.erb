@@ -1,8 +1,9 @@
 <div class="comedians-container">
   <% @comedians.each do |comedian| %>
   <ul>
-    <li><%= comedian.name %></li>
-    <li><%= link_to  "Delete #{comedian.name}", comedian_path(comedian), method: :delete, data: { confirm: "Are you sure?" } %></li>
+    <h4><%= comedian.name %></h4>
+    <li><%= cl_image_tag comedian.photo.key,  width: 500, height: 500, crop: :fill if comedian.photo.attached? %></li>
+    <li><%= link_to  "Check out #{comedian.name}", comedian_path(comedian) %></li>
   </ul>
   <% end %>
 </div>

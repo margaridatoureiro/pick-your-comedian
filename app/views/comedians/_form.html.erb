@@ -4,7 +4,11 @@
       <%= f.input :name %>
       <%= f.input :age %>
       <%= f.input :content %>
-      <%= f.submit 'Bring your funny persona into this world', class: "btn btn-danger" %>
+      <%= f.input :photo, as: :file %>
+      <div class="d-flex justify-content-between">
+        <%= f.submit 'Bring your funny persona into this world', class: "submit-button btn btn-danger" %>
+        <%= link_to "Go back", root_path, class: "submit-button btn btn-success"%>
+      </div>
     <% end %>
   </div>
 </div>

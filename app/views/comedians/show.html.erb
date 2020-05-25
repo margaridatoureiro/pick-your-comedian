@@ -1,3 +1,9 @@
-<%= @comedian.name  %>
-<%= @comedian.age %>
-<%= @comedian.content %>
+<ul class="comedian-page">
+    <li><%= @comedian.name  %></li>
+    <li><%= @comedian.age %></li>
+    <li><%= cl_image_tag @comedian.photo.key, width: 500, height: 500, crop: :fill if @comedian.photo.attached? %></li>
+    <li><%= @comedian.content %></li>
+    <li><%= link_to "Edit #{@comedian.name}", edit_comedian_path(@comedian) %></li>
+    <li><%= link_to "Delete #{@comedian.name}", comedian_path(@comedian), method: :delete, data: { confirm: "Are you sure?" } %></li>
+    <li><%= link_to "Go back", root_path %></li>
+</ul>
