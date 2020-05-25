@@ -1,16 +1,14 @@
-<%= simple_form_for @comedian do |f| %>
-  <%= f.input :name %>
-  <%= f.input :age %>
-  <%= f.input :content %>
-  <%= f.submit %>
-<% end %>
-
-<%#= form_for(comedian) do |f| %>
-  <%#= f.label :name %>
-  <%#= f.text_field :name %>
-  <%#= f.label :age %>
-  <%#= f.text_field :age %>
-  <%#= f.label :content %>
-  <%#= f.number_field :content %>
-  <%#= f.submit %>
-<%# end %>
+<div class="form-container">
+  <div class="form col-6 p-4" >
+    <%= simple_form_for @comedian do |f| %>
+      <%= f.input :name %>
+      <%= f.input :age %>
+      <%= f.input :content %>
+      <%= f.input :photo, as: :file %>
+      <div class="d-flex justify-content-between">
+        <%= f.submit 'Bring your funny persona into this world', class: "submit-button btn btn-danger" %>
+        <%= link_to "Go back", root_path, class: "submit-button btn btn-success"%>
+      </div>
+    <% end %>
+  </div>
+</div>

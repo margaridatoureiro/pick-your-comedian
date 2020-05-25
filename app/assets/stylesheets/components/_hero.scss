@@ -1,0 +1,23 @@
+.banner {
+    background-image: url("https://s3-us-west-1.amazonaws.com/dkn-wp/wp-content/uploads/2018/03/10191721/BATMAN_TAS_POSTER_SEPS_1024x1024-740x431.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    align-content: center;
+    .container {
+        width: 1200px;
+        margin: 0px auto;
+        font-weight: bold;
+        text-align: center;
+        color: white;
+        text-shadow: 2px 2px 4px #000000;
+        padding: 200px 0;
+    }
+    h1 {
+        font-size: 56px;
+    }
+    h4 {
+        font-size: 25px;
+    }
+} 

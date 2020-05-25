@@ -23,4 +23,4 @@ test:
 
 production:
   <<: *default
-  database: rails-mister-cocktail_production
+  database: pick-your-comedian_production
