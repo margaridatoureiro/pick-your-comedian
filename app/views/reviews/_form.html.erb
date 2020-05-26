@@ -1,0 +1,12 @@
+<div class="form-container">
+  <div class="form col-6 p-4">
+    <%= simple_form_for [@comedian, @review] do |f| %>
+      <%= f.input :rating %>
+      <%= f.input :comment %>
+      <div class="d-flex justify-content-between">
+        <%= f.submit "Leave a filthy review", class: "submit-button btn btn-danger" %>
+        <%= link_to "Go back", comedian_path(@comedian), class: "submit-button btn btn-success" %>
+      </div>
+    <% end %>
+  </div>
+</div>

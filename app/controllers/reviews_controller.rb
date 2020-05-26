@@ -26,6 +26,7 @@ class ReviewsController < ApplicationController
       redirect_to comedian_path(@review.comedian)
     else
       render :edit
+    end
   end
 
   def destroy
