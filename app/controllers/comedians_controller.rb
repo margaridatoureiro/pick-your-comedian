@@ -52,5 +52,6 @@ class ComediansController < ApplicationController
   end
 
   def get_average_rating(comedian)
-    @comedian.reviews.sum(:rating) / @comedian.reviews.size.to_f
+    comedian.reviews.sum(:rating) / comedian.reviews.size
+  end
 end

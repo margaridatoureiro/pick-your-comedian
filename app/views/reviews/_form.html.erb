@@ -1,10 +1,16 @@
 <div class="form-container">
   <div class="form col-6 p-4">
     <%= simple_form_for [@comedian, @review] do |f| %>
-      <%= f.input :rating %>
-      <%= f.input :comment %>
+    <div class="rating-container">
+      <input type="radio" name="review[rating]" value="5" id="star-5"> <label for="star-5"><i class="fas fa-star"></i></label>
+      <input type="radio" name="review[rating]" value="4" id="star-4"> <label for="star-4"><i class="fas fa-star"></i></label>
+      <input type="radio" name="review[rating]" value="3" id="star-3"> <label for="star-3"><i class="fas fa-star"></i></label>
+      <input type="radio" name="review[rating]" value="2" id="star-2"> <label for="star-2"><i class="fas fa-star"></i></label>
+      <input type="radio" name="review[rating]" value="1" id="star-1"> <label for="star-1"><i class="fas fa-star"></i></label>
+    </div>
+      <%= f.input :comment, label: "We want to know your opinion in detail! Go ahead and leave a filthy review ;)"  %>
       <div class="d-flex justify-content-between">
-        <%= f.submit "Leave a filthy review", class: "submit-button btn btn-danger" %>
+        <%= f.submit "Share your feeback", class: "submit-button btn btn-danger" %>
         <%= link_to "Go back", comedian_path(@comedian), class: "submit-button btn btn-success" %>
       </div>
     <% end %>

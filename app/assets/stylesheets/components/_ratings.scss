@@ -1,0 +1,24 @@
+.rating-container {
+    direction: rtl !important;
+    label {
+    display: inline-block;
+    cursor: pointer;
+    color: darkgrey;
+    font-size: 23px;
+    transition: color 0.2s;
+    }
+    input {
+        display: none;
+        }    
+    label:hover, label:hover ~ label, input:checked ~ label {
+        color: gold;
+    }
+}
+
+#voted {
+    color: gold;
+}
+
+#didnt-vote {
+    color: darkgrey;
+}

@@ -12,7 +12,12 @@
   </head>
 
   <body>
-    <%= render "comedians/navbar" %>
+    <% if controller_name = 'comedians' && action_name == 'index' %>
+      <%= render "comedians/navbar" %> 
+      <%= render "comedians/banner" %>   
+    <% else %>
+      <%= render "comedians/navbar" %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
