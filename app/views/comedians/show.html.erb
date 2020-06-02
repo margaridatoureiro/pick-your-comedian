@@ -3,12 +3,14 @@
     <li><%= @comedian.age %></li>
     <li><%= cl_image_tag @comedian.photo.key, width: 400, crop: :fill if @comedian.photo.attached? %></li>
     <li><%= @comedian.content %></li>
-    <li><% @comedian.reviews.each do |review|%></li>
+    <li> Average rating: <%= @comedian.average_rating.to_f.round(2) %> / 5 </li>
+    <li><% @comedian.reviews.reverse_each do |review|%></li>
     <div class="d-flex justify-content-between">
-        <li><%= review.rating %></li>
+        <li><% review.rating.to_i.times do  %><i class="fas fa-star" id="voted"></i> <% end %> <% (5 - review.rating.to_i).times do  %><i class="fas fa-star" id="didnt-vote"></i> <% end %> </li> 
         <li><%= review.comment.empty? ? content_tag(:em, "This user left no comments.") : review.comment %></li>
     </div>
     <li><% end %></li>
+    <li><%= link_to "Rate #{@comedian.name} and leave a review", new_comedian_review_path(@comedian) %></li>
     <li><%= link_to "Edit #{@comedian.name}", edit_comedian_path(@comedian) %></li>
     <li><%= link_to "Delete #{@comedian.name}", comedian_path(@comedian), method: :delete, data: { confirm: "Are you sure?" } %></li>
     <li><%= link_to "Go back", root_path %></li>
