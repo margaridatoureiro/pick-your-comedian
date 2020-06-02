@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.comedian = @comedian
     if @review.save
-      redirect_to @comedian
+      redirect_to @comedian #(same as comedian_path(@review.comedian),the comedian of that review)
     else
       render :new
     end

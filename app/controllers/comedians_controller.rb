@@ -21,7 +21,10 @@ class ComediansController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @comedian.average_rating = get_average_rating(@comedian)
+    @comedian.save
+  end
 
   def edit; end
 
@@ -45,6 +48,9 @@ class ComediansController < ApplicationController
   end
 
   def comedian_params
-    params.require(:comedian).permit(:name, :age, :content, :photo)
+    params.require(:comedian).permit(:name, :age, :content, :photo, :average_rating)
   end
+
+  def get_average_rating(comedian)
+    @comedian.reviews.sum(:rating) / @comedian.reviews.size.to_f
 end
