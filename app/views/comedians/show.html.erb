@@ -1,8 +1,14 @@
-<ul class="comedian-page">
+<ul class="comedian-page m-4">
     <li><%= @comedian.name  %></li>
     <li><%= @comedian.age %></li>
-    <li><%= cl_image_tag @comedian.photo.key, width: 500, height: 500, crop: :fill if @comedian.photo.attached? %></li>
+    <li><%= cl_image_tag @comedian.photo.key, width: 400, crop: :fill if @comedian.photo.attached? %></li>
     <li><%= @comedian.content %></li>
+    <li><% @comedian.reviews.each do |review|%></li>
+    <div class="d-flex justify-content-between">
+        <li><%= review.rating %></li>
+        <li><%= review.comment.empty? ? content_tag(:em, "This user left no comments.") : review.comment %></li>
+    </div>
+    <li><% end %></li>
     <li><%= link_to "Edit #{@comedian.name}", edit_comedian_path(@comedian) %></li>
     <li><%= link_to "Delete #{@comedian.name}", comedian_path(@comedian), method: :delete, data: { confirm: "Are you sure?" } %></li>
     <li><%= link_to "Go back", root_path %></li>
