@@ -1,17 +1,22 @@
 .navbar {
   position: sticky;
   top: 0;
-  background-color: $darkpurple;
+  z-index: 1;
 }
 
 .navbar-lewagon {
     justify-content: space-between;
+    background-color: $darkpurple;
   }
-  
+
   .navbar-lewagon .navbar-collapse {
     flex-grow: 0;
   }
-  
+
   .navbar-lewagon .navbar-brand img {
     width: 40px;
+  }
+
+  .navbar-lewagon-white {
+    background-color: white;
   }
