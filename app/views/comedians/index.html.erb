@@ -3,11 +3,11 @@
     <div class="flip-card-container">
       <div class="flip-card">
         <div class="flip-card-front">
-          <%= image_tag "card-front.png", width: 400, crop: :fill %>
+          <%= image_tag "card-front.png", crop: :fill %>
         </div>
         <div class="flip-card-back">
           <ul>
-            <li><%= cl_image_tag comedian.photo.key,  width: 300, crop: :fill if comedian.photo.attached? %></li>
+            <li><%= cl_image_tag comedian.photo.key, width: 240, height: 400, crop: :fill if comedian.photo.attached? %></li>
             <li><%= link_to  "Check out #{comedian.name}", comedian_path(comedian) %></li>
           </ul>
         </div>
