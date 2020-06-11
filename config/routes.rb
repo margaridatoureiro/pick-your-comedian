@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root to: 'comedians#index'
   resources :comedians do
     resources :reviews, only: %i[new create]

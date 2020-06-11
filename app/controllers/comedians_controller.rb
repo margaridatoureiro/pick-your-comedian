@@ -2,6 +2,7 @@
 
 # top-level class comment
 class ComediansController < ApplicationController
+  before_action :authenticate_user!
   before_action :fetch_comedian, only: %i[show edit update destroy]
   def index
     @comedians = Comedian.all
