@@ -5,6 +5,7 @@ ruby '2.6.6'
 
 gem 'autoprefixer-rails'
 gem 'cloudinary', '~> 1.12.0'
+gem 'devise'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'faker'
 gem 'font-awesome-sass', '~> 5.6.1'
