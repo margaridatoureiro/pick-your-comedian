@@ -2,6 +2,7 @@
 
 # top-level class comment -> hint: dont forget that destroy doesnt have a comedian_id
 class ReviewsController < ApplicationController
+  before_action :authenticate_user!
   before_action :fetch_comedian, only: %i[new create]
   before_action :fetch_review, only: %i[edit update destroy]
   def new

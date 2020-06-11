@@ -24,3 +24,5 @@ test:
 production:
   <<: *default
   database: pick-your-comedian_production
+  username: pick-your-comedian
+  password: <%= ENV['PICK-YOUR-COMEDIAN_DATABASE_PASSWORD'] %>

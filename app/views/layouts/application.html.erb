@@ -13,6 +13,7 @@
   </head>
 
   <body>
+    <%= render 'shared/flashes' %>
     <%= render "comedians/navbar" %>
     <% if controller_name = 'comedians' && action_name == 'index' %>
       <%= render "comedians/banner" %>
