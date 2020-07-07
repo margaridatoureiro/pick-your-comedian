@@ -19,7 +19,9 @@ console.log("Hello from application!!");
 // const imagePath = (name) => images(name, true)
 import 'bootstrap';
 import { flipOnClick } from '../components/flip';
+import { openSidebar } from '../components/sidebar';
 
 document.addEventListener('turbolinks:load', () => {
   flipOnClick();
+  openSidebar();
 });
