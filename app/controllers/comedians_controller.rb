@@ -6,6 +6,8 @@ class ComediansController < ApplicationController
   before_action :fetch_comedian, only: %i[show edit update destroy]
   def index
     @comedians = Comedian.all
+    Comedian.reindex
+    @results = Comedian.search(params[:query])
   end
 
   def new

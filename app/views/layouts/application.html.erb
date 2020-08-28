@@ -15,11 +15,11 @@
   <body>
     <%= render 'shared/flashes' %>
     <div class="wrapper">
-      <%= render "comedians/sidebar" %>
+      <%= render "components/sidebar" %>
       <div id="content">
-        <%= render "comedians/navbar" %>
+        <%= render "components/navbar" %>
         <% if controller_name = 'comedians' && action_name == 'index' %>
-          <%= render "comedians/banner" %>
+          <%= render "components/banner" %>
         <% end %>
         <%= yield %>
       </div>

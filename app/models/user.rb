@@ -4,5 +4,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :role, inclusion: { in: ["Comedy Agency", "Headhunter"] }
+  validates :role, presence: true
 end

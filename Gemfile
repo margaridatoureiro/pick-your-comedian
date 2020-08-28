@@ -10,6 +10,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'faker'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'simple_form'
+gem 'searchkick', '~> 3.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.1'
 # Use postgreSQL as the database for Active Record
