@@ -2,11 +2,12 @@
 // present in this directory. You're encouraged to place your actual application logic in
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
-
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require("moment/locale/ja")
+require("tempusdominus-bootstrap-4")
 
 console.log("Hello from application!!");
 
@@ -20,8 +21,10 @@ console.log("Hello from application!!");
 import 'bootstrap';
 import { flipOnClick } from '../components/flip';
 import { openSidebar } from '../components/sidebar';
+// import { fancyDateTimePicker } from './date_time_picker';
 
 document.addEventListener('turbolinks:load', () => {
   flipOnClick();
   openSidebar();
+  // fancyDateTimePicker();
 });

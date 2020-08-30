@@ -6,8 +6,8 @@ class ComediansController < ApplicationController
   before_action :fetch_comedian, only: %i[show edit update destroy]
   def index
     @comedians = Comedian.all
-    Comedian.reindex
-    @results = Comedian.search(params[:query])
+    # Comedian.reindex
+    # @results = Comedian.search(params[:query])
   end
 
   def new
@@ -16,15 +16,18 @@ class ComediansController < ApplicationController
 
   def create
     @comedian = Comedian.new(comedian_params)
+    current_user.role = 'Comedy Agency'
+    current_user.save
+    @comedian.user_id = current_user.id
     if @comedian.save
       redirect_to comedian_path(@comedian)
-      # or redirect_to @cocktail or redirect_to @cocktail(@cocktail.id)
     else
       render :new
     end
   end
 
   def show
+    @booking = Booking.new
     @comedian.average_rating = get_average_rating(@comedian)
     @comedian.save
   end
