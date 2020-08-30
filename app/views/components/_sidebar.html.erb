@@ -1,0 +1,22 @@
+<nav id="sidebar">
+  <ul class="active">
+    <div class="sidebar-links">
+      <%= link_to root_path do %>
+        <li>HOMEPAGE</li>
+      <% end %>
+      <%= link_to new_comedian_path do %>
+        <li>ADD A COMEDIAN</li>
+      <% end %>
+      <%= link_to comedians_path do %>
+        <li>OUR COMEDIANS</li>
+      <% end %>
+      <%= link_to root_path do %>
+        <li>CALENDAR</li>
+      <% end %>
+    </div>
+    <div class="sidebar-comics">
+      <li><%= image_tag "pow.png" %></li>
+      <li><%= image_tag "batman.png" %></li>
+    </div>
+  </ul>
+</nav>
