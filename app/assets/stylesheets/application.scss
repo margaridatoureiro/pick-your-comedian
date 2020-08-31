@@ -7,6 +7,9 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import 'mapbox-gl/dist/mapbox-gl';
+// *** to have a nice lookig datetime format on simple_form_for ***
+@import "tempusdominus-bootstrap-4/src/sass/tempusdominus-bootstrap-4";
 
 // Your CSS partials
 @import "components/index";

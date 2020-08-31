@@ -1,0 +1,23 @@
+<div class="form-container">
+  <div class="form col-6 p-4" >
+    <%= simple_form_for [@comedian, @booking] do |f| %>
+      <div class="d-flex">
+        <%= f.input :start_date, as: :datetime, html5: true, order: %i(day month year), label: "From" %>
+        <%= f.input :end_date, as: :datetime, html5: true, order: %i(day month year), label: "To" %>
+      </div>
+        <%= f.submit "Book #{@comedian.name}", class: 'submit-button btn btn-danger ml-2' %>
+    <% end %>
+  </div>
+</div>
+
+
+<!--  <div class="form-group">
+        <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+          <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
+          <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+  </div>
+
+ -->
