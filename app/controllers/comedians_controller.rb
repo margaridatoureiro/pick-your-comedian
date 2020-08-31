@@ -27,7 +27,7 @@ class ComediansController < ApplicationController
   end
 
   def show
-    @markers = { lat: @comedian.latitude, lng: @comedian.longitude }
+    @markers = [{ lng: @comedian.longitude, lat: @comedian.latitude }]
     @booking = Booking.new
     @comedian.average_rating = get_average_rating(@comedian)
     @comedian.save

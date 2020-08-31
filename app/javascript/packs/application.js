@@ -19,21 +19,14 @@ console.log("Hello from application!!");
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 import 'bootstrap';
-// import 'mapbox-gl/dist/mapbox-gl.css';
 import { flipOnClick } from '../components/flip';
 import { openSidebar } from '../components/sidebar';
-import "mapbox-gl/dist/mapbox-gl.css";
 import { initMapbox } from '../plugins/init_mapbox';
-
-document.addEventListener('turbolinks:load', () => {
-  initMapbox();
-})
-// initMapbox();
-
 // import { fancyDateTimePicker } from '../plugins/date_time_picker';
 
 document.addEventListener('turbolinks:load', () => {
   flipOnClick();
   openSidebar();
+  initMapbox();
   // fancyDateTimePicker();
 });

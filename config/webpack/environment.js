@@ -9,9 +9,10 @@ environment.plugins.prepend('Provide',
     $: 'jquery',
     jQuery: 'jquery',
     Popper: ['popper.js', 'default'],
-    moment: 'moment/moment'
+    // moment: 'moment/moment'
   })
 )
+// environment.loaders.delete('nodeModules');
 
 
 module.exports = environment
