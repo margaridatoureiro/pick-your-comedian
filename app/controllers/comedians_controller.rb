@@ -27,6 +27,7 @@ class ComediansController < ApplicationController
   end
 
   def show
+    @markers = { lat: @comedian.latitude, lng: @comedian.longitude }
     @booking = Booking.new
     @comedian.average_rating = get_average_rating(@comedian)
     @comedian.save
@@ -54,7 +55,7 @@ class ComediansController < ApplicationController
   end
 
   def comedian_params
-    params.require(:comedian).permit(:name, :age, :content, :photo, :average_rating)
+    params.require(:comedian).permit(:name, :age, :content, :photo, :average_rating, :address)
   end
 
   def get_average_rating(comedian)

@@ -1,23 +1,21 @@
 {
-  "application.js": "/packs/js/application-781bad0dc2094227fc54.js",
-  "application.js.map": "/packs/js/application-781bad0dc2094227fc54.js.map",
-  "date_time_picker.js": "/packs/js/date_time_picker-9baea1bb58490cfe8c84.js",
-  "date_time_picker.js.map": "/packs/js/date_time_picker-9baea1bb58490cfe8c84.js.map",
+  "application.css": "/packs/css/application-b11898b0.css",
+  "application.css.map": "/packs/css/application-b11898b0.css.map",
+  "application.js": "/packs/js/application-9ce0cdef36ee5093bd1d.js",
+  "application.js.map": "/packs/js/application-9ce0cdef36ee5093bd1d.js.map",
   "entrypoints": {
     "application": {
+      "css": [
+        "/packs/css/application-b11898b0.css"
+      ],
       "js": [
-        "/packs/js/application-781bad0dc2094227fc54.js"
+        "/packs/js/application-9ce0cdef36ee5093bd1d.js"
+      ],
+      "css.map": [
+        "/packs/css/application-b11898b0.css.map"
       ],
       "js.map": [
-        "/packs/js/application-781bad0dc2094227fc54.js.map"
-      ]
-    },
-    "date_time_picker": {
-      "js": [
-        "/packs/js/date_time_picker-9baea1bb58490cfe8c84.js"
-      ],
-      "js.map": [
-        "/packs/js/date_time_picker-9baea1bb58490cfe8c84.js.map"
+        "/packs/js/application-9ce0cdef36ee5093bd1d.js.map"
       ]
     }
   }

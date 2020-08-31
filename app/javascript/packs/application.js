@@ -6,8 +6,8 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-require("moment/locale/ja")
-require("tempusdominus-bootstrap-4")
+// require("moment/locale/ja") #datetimepicker
+// require("tempusdominus-bootstrap-4") #datetimepicker
 
 console.log("Hello from application!!");
 
@@ -19,9 +19,18 @@ console.log("Hello from application!!");
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 import 'bootstrap';
+// import 'mapbox-gl/dist/mapbox-gl.css';
 import { flipOnClick } from '../components/flip';
 import { openSidebar } from '../components/sidebar';
-// import { fancyDateTimePicker } from './date_time_picker';
+import "mapbox-gl/dist/mapbox-gl.css";
+import { initMapbox } from '../plugins/init_mapbox';
+
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+})
+// initMapbox();
+
+// import { fancyDateTimePicker } from '../plugins/date_time_picker';
 
 document.addEventListener('turbolinks:load', () => {
   flipOnClick();
