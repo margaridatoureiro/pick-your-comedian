@@ -11,6 +11,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
+    @review.user_id = current_user.id
     @review.comedian = @comedian
     if @review.save
       redirect_to @comedian # (same as comedian_path(@review.comedian),the comedian of that review)
