@@ -1,23 +1,33 @@
-<div class="comedian-page row justify-content-left" style="margin: 30px 100px 100px 100px">
-  <ul class="m-3 p-0">
-    <h3><%= @comedian.name  %></h3>
-    <li><%= @comedian.age %></li>
-    <li><%= cl_image_tag @comedian.photo.key, width: 400, crop: :fill if @comedian.photo.attached? %></li>
-    <li><%= @comedian.content %></li>
-    <li><%= @comedian.address %></li>
+<div class="comedian-page row d-flex justify-content-between" style="margin: 30px 100px 100px 100px">
+
+  <div class="header-picture col-12">
+    <%= cl_image_tag @comedian.photo.key, class: "profile-photo", width: 200, crop: :fill if @comedian.photo.attached? %>
+  </div>
+
+  <div class="comedian-info col-4 m-3 p-4">
+    <h4><%= @comedian.name  %></h4>
+    <h4><%= @comedian.age %> years old</h4>
+    <h4> Average rating: <%= @comedian.average_rating.to_f.round(2) %> / 5 </h4>
+    <h4><%= @comedian.address %></h4>
     <%= render 'map' %>
-    <li> Average rating: <%= @comedian.average_rating.to_f.round(2) %> / 5 </li>
-  </ul>
+  </div>
+  <div class="booking-info col-7">
+    <h4 class="p-4">"<%= @comedian.content %>"</h4>
     <%= render 'bookings/new' %>
-  <ul class="col-6">
+  </div>
+
+  <ul class="col-6 p-4 m-3">
+    <h4>Take a look at <%= @comedian.name %>'s reviews:</h4>
+    <br>
     <% @comedian.reviews.reverse_each do |review|%>
       <div class="d-flex justify-content-between mt-4 mb-4">
+        <li><%= review.comment.empty? ? content_tag(:em, "This user left no comments.") : review.comment %></li><br>
         <li><% review.rating.to_i.times do  %><i class="fas fa-star" id="voted"></i> <% end %> <% (5 - review.rating.to_i).times do  %><i class="fas fa-star" id="didnt-vote"></i> <% end %></li>
-        </br><li><%= review.comment.empty? ? content_tag(:em, "This user left no comments.") : review.comment %></li>
       </div>
     <% end %>
   </ul>
-  <div class="col-9 justify-content-center">
+
+  <div class="col-9 justify-content-center m-4">
     <div class="buttons d-flex justify-content-between">
       <%= link_to "Rate #{@comedian.name} and leave a review", new_comedian_review_path(@comedian), class: 'submit-button btn btn-danger' %>
       <%= link_to "Edit #{@comedian.name}", edit_comedian_path(@comedian), class: 'submit-button btn btn-success' %>
@@ -25,4 +35,5 @@
       <%= link_to "Go back", root_path, class: 'submit-button btn btn-success' %>
     </div>
   </div>
+
 </div>

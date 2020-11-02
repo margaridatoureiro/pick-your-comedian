@@ -1,6 +1,6 @@
 <div class="form-container">
   <div class="form col-6 p-4" >
-    <%= simple_form_for @comedian do |f| %>
+    <%= simple_form_for [@user, @comedian] do |f| %>
       <%= f.input :name %>
       <%= f.input :age %>
       <%= f.input :content %>
@@ -8,8 +8,17 @@
       <%= f.input :photo, as: :file %>
       <div class="d-flex justify-content-between">
         <%= f.submit 'Bring your funny persona into this world', class: "submit-button btn btn-danger" %>
-        <%= link_to "Go back", comedian_path(@comedian), class: "submit-button btn btn-success"%>
+        <%= link_to "Go back", comedians_path(@comedian), class: "submit-button btn btn-success"%>
       </div>
     <% end %>
   </div>
 </div>
+
+<!--
+<%= simple_form_for @comedian do |f| %>
+  <div class="form-inline col-lg">
+    <%= f.input :name, id: "chat-input" %>
+    <%= f.submit "Submit user!", class:"chat-submit"%>
+  </div>
+<% end %>
+ -->

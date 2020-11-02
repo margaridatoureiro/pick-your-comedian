@@ -22,11 +22,14 @@ import 'bootstrap';
 import { flipOnClick } from '../components/flip';
 import { openSidebar } from '../components/sidebar';
 import { initMapbox } from '../plugins/init_mapbox';
+import { scrollDown, scrollToTop } from '../components/scroll';
 // import { fancyDateTimePicker } from '../plugins/date_time_picker';
 
 document.addEventListener('turbolinks:load', () => {
   flipOnClick();
   openSidebar();
   initMapbox();
+  scrollDown();
+  scrollToTop();
   // fancyDateTimePicker();
 });
