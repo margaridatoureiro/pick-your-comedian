@@ -11,6 +11,7 @@ class Comedian < ApplicationRecord
   end
   has_many :bookings, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  belongs_to :user
   has_one_attached :photo
   validates :name, :age, :content, presence: true
   geocoded_by :address

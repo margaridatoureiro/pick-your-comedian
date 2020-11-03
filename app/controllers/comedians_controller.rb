@@ -21,7 +21,7 @@ class ComediansController < ApplicationController
     @comedian = Comedian.new(comedian_params)
     current_user.role = 'Comedy Agency'
     current_user.save
-    @comedian.user_id = current_user.id
+    @comedian.user_id = current_user.id # same as @comedian.user = current_user
     if @comedian.save
       redirect_to comedian_path(@comedian)
     else
@@ -58,7 +58,7 @@ class ComediansController < ApplicationController
   end
 
   def comedian_params
-    params.require(:comedian).permit(:name, :age, :content, :photo, :average_rating, :address)
+    params.require(:comedian).permit(:id, :name, :age, :content, :photo, :address, :average_rating)
   end
 
   def get_average_rating(comedian)
