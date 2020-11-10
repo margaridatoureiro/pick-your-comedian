@@ -30,6 +30,7 @@ class ComediansController < ApplicationController
   end
 
   def show
+    @comedian.user_id = current_user.id
     @markers = [{ lng: @comedian.longitude, lat: @comedian.latitude }]
     @booking = Booking.new
     @comedian.average_rating = get_average_rating(@comedian)
@@ -40,6 +41,7 @@ class ComediansController < ApplicationController
 
   def update
     if @comedian.update(comedian_params)
+      @comedian.user_id = current_user.id
       redirect_to comedian_path(@comedian)
     else
       render :edit

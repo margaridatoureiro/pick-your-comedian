@@ -1,38 +1,67 @@
-<div class="comedian-page row d-flex justify-content-between" style="margin: 30px 100px 100px 100px">
+<div class="comedian-page row justify-content-center" style="margin: 30px 100px 100px 100px">
 
-  <div class="header-picture col-12">
-    <%= cl_image_tag @comedian.photo.key, class: "profile-photo", width: 200, crop: :fill if @comedian.photo.attached? %>
+  <div class="header-picture col-12 d-flex">
+    <%= cl_image_tag @comedian.photo.key, class: "profile-photo", width: 200, height: 210, crop: :fill if @comedian.photo.attached? %>
+    <h4>"<%= @comedian.content %>"</h4>
   </div>
 
-  <div class="comedian-info col-4 m-3 p-4">
-    <h4><%= @comedian.name  %></h4>
-    <h4><%= @comedian.age %> years old</h4>
-    <h4> Average rating: <%= @comedian.average_rating.to_f.round(2) %> / 5 </h4>
-    <h4><%= @comedian.address %></h4>
-    <%= render 'map' %>
-  </div>
-  <div class="booking-info col-7">
-    <h4 class="p-4">"<%= @comedian.content %>"</h4>
-    <%= render 'bookings/new' %>
-  </div>
 
-  <ul class="col-6 p-4 m-3">
-    <h4>Take a look at <%= @comedian.name %>'s reviews:</h4>
-    <br>
-    <% @comedian.reviews.reverse_each do |review|%>
-      <div class="d-flex justify-content-between mt-4 mb-4">
-        <li><%= review.comment.empty? ? content_tag(:em, "This user left no comments.") : review.comment %></li><br>
-        <li><% review.rating.to_i.times do  %><i class="fas fa-star" id="voted"></i> <% end %> <% (5 - review.rating.to_i).times do  %><i class="fas fa-star" id="didnt-vote"></i> <% end %></li>
+  <div class="col-7">
+
+    <!---------------------------------TABS--------------------------------------->
+    <ul class="nav nav-tabs d-flex justify-content-around">
+      <li class="active"><a data-toggle="tab" href="#profile">Profile</a></li>
+      <li class=""><a data-toggle="tab" href="#book">Book <%= @comedian.name %></a></li>
+      <li class=""><a data-toggle="tab" href="#reviews">Reviews</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <!-----------PROFILE INFO-------------->
+      <div id="profile" class="tab-pane active in">
+        <div class="comedian-info m-3 p-4 d-flex justify-content-between">
+          <div class="col-6 mt-4">
+            <p><span>Name: </span><%= @comedian.name  %></p>
+            <p><span>Age: </span><%= @comedian.age %> years old</p>
+            <% unless @comedian.average_rating.to_f.nan? %>
+            <p><span>Average Rating: </span><% @comedian.average_rating.to_i.times do %><i class="fas fa-star" id="voted"></i> <% end %> <% (5 - @comedian.average_rating.to_i).times do  %><i class="fas fa-star" id="didnt-vote"></i> <% end %></li></p>
+            <% end %>
+          </div>
+          <div class="mt-4" style="width: 100%">
+              <%= render 'map' %>
+          </div>
+        </div>
       </div>
-    <% end %>
-  </ul>
 
-  <div class="col-9 justify-content-center m-4">
+      <!-----------BOOKING INFO-------------->
+      <div id="book" class="tab-pane fade">
+        <div class="booking-info d-flex justify-content-center">
+          <%= render 'bookings/new' %>
+        </div>
+      </div>
+
+
+      <!-----------REVIEWS-------------->
+      <div id="reviews" class="tab-pane fade">
+        <ul class="col-10 p-4 m-3">
+          <% @comedian.reviews.reverse_each do |review|%>
+            <div class="d-flex justify-content-between mt-4 mb-4">
+              <li class="col-8"><%= review.comment.empty? ? content_tag(:em, "This user left no comments.") : review.comment %></li><br>
+              <li class="col-4"><% review.rating.to_i.times do  %><i class="fas fa-star" id="voted"></i> <% end %> <% (5 - review.rating.to_i).times do  %><i class="fas fa-star" id="didnt-vote"></i> <% end %></li>
+            </div>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-----------BUTTONS-------------->
+  <div class="col-7 justify-content-center m-4">
     <div class="buttons d-flex justify-content-between">
-      <%= link_to "Rate #{@comedian.name} and leave a review", new_comedian_review_path(@comedian), class: 'submit-button btn btn-danger' %>
-      <%= link_to "Edit #{@comedian.name}", edit_comedian_path(@comedian), class: 'submit-button btn btn-success' %>
-      <%= link_to "Delete #{@comedian.name}", comedian_path(@comedian), method: :delete, data: { confirm: "Are you sure?" }, class: 'submit-button btn btn-success' %>
-      <%= link_to "Go back", root_path, class: 'submit-button btn btn-success' %>
+      <%= link_to "Rate #{@comedian.name} and leave a review", new_comedian_review_path(@comedian), class: 'submit-button btn btn-success m-2' %>
+      <%= link_to "Edit #{@comedian.name}", edit_comedian_path(@comedian), class: 'submit-button btn btn-danger m-2' %>
+      <%= link_to "Delete #{@comedian.name}", comedian_path(@comedian), method: :delete, data: { confirm: "Are you sure?" }, class: 'submit-button btn btn-danger m-2' %>
+      <%= link_to "Go back", comedians_path, class: 'submit-button btn btn-danger m-2' %>
     </div>
   </div>
 

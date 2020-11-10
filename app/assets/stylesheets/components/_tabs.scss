@@ -1,0 +1,21 @@
+.nav-tabs a {
+  padding: 0.8em;
+  color: $coolgrey;
+  font-family: "Anton", sans-serif;
+  font-weight: normal;
+  font-size: 23px;
+}
+
+a.active {
+  background-color: $darkpurple;
+  color: white;
+}
+
+.tab-content > .active {
+  border-top: 1.5px solid $darkpurple;
+}
+
+.nav-tabs {
+  border-bottom: none;
+  margin-bottom: 1.1em;
+}
