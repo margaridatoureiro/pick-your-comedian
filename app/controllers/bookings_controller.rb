@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# top-level class comment
 class BookingsController < ApplicationController
   before_action :fetch_comedian, only: :create
   before_action :fetch_booking, only: :destroy
