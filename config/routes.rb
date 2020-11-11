@@ -7,5 +7,11 @@ Rails.application.routes.draw do
   end
   resources :reviews, only: %i[edit update destroy]
   resources :bookings, only: :destroy
+  resources :chatrooms do
+    resources :messages, only: :create
+    collection do
+      get :general_channel
+    end
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

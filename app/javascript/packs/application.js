@@ -6,10 +6,7 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-// require("moment/locale/ja") #datetimepicker
-// require("tempusdominus-bootstrap-4") #datetimepicker
-
-console.log("Hello from application!!");
+//console.log("Hello from application!!");
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -23,13 +20,21 @@ import { flipOnClick } from '../components/flip';
 import { openSidebar } from '../components/sidebar';
 import { initMapbox } from '../plugins/init_mapbox';
 import { scrollDown, scrollToTop } from '../components/scroll';
-// import { fancyDateTimePicker } from '../plugins/date_time_picker';
+import { initChatroomCable } from '../channels/chatroom_channel';
 
 document.addEventListener('turbolinks:load', () => {
+  initMapbox();
   flipOnClick();
   openSidebar();
-  initMapbox();
+  initChatroomCable();
+  // scrollDown();
+  // scrollToTop();
+});
+
+
+if (window.location.pathname=='/' || window.location.pathname=='#') {
+  document.addEventListener('turbolinks:load', () => {
   scrollDown();
   scrollToTop();
-  // fancyDateTimePicker();
-});
+  });
+}
