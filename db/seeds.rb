@@ -9,7 +9,7 @@ puts 'Destroying all humourless nutjobs'
 Comedian.destroy_all
 
 10.times do
-  Comedian.create(name: Faker::FunnyName.name, age: rand(18..79), content: Faker::Movies::HarryPotter.quote, user_id: 3)
+  Comedian.create(name: Faker::FunnyName.name, age: rand(18..79), content: Faker::Movies::HarryPotter.quote)
 end
 
 puts 'Shamelessly invoking some memorable jokers who are NOT prone to murder, thank you very much'
