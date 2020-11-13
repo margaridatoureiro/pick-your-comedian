@@ -6,10 +6,11 @@ require 'faker'
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts 'Destroying all humourless nutjobs'
-Comedian.destroy_all
+User.destroy_all
+# Comedian.destroy_all
 
-10.times do
-  Comedian.create(name: Faker::FunnyName.name, age: rand(18..79), content: Faker::Movies::HarryPotter.quote)
-end
+# 10.times do
+#   Comedian.create(name: Faker::FunnyName.name, age: rand(18..79), content: Faker::Movies::HarryPotter.quote)
+# end
 
 puts 'Shamelessly invoking some memorable jokers who are NOT prone to murder, thank you very much'
