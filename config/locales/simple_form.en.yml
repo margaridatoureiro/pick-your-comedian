@@ -2,6 +2,17 @@ en:
   simple_form:
     "yes": 'Yes'
     "no": 'No'
+    # eng:
+    # date:
+    #   order:
+    #     - :day
+    #     - :month
+    #     - :year
+    date:
+      formats:
+        default: '%d/%m/%Y'
+        long: ! '%d %B, %Y'
+
     required:
       text: 'required'
       mark: '*'
