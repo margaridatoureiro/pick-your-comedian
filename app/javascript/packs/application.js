@@ -23,10 +23,10 @@ import { scrollDown, scrollToTop } from '../components/scroll';
 import { initChatroomCable } from '../channels/chatroom_channel';
 
 document.addEventListener('turbolinks:load', () => {
+  initChatroomCable();
   initMapbox();
   flipOnClick();
   openSidebar();
-  initChatroomCable();
   // scrollDown();
   // scrollToTop();
 });
@@ -38,3 +38,11 @@ if (window.location.pathname=='/' || window.location.pathname=='#') {
   scrollToTop();
   });
 }
+
+// const banner = document.querySelector('.banner');
+// if (banner) {
+//   document.addEventListener('turbolinks:load', () => {
+//   scrollDown();
+//   scrollToTop();
+//   });
+// }

@@ -31,3 +31,10 @@
 
 en:
   hello: "Hello world"
+  # date:
+  #     simple_form:
+  #       default: "dd/mm/yyyy"
+  #       long: "dd MM, yyyy"
+  #     formats:
+  #       default: ! '%d/%m/%Y'
+  #       long: ! '%d %B, %Y'

@@ -2,8 +2,10 @@
   <div class="form" >
     <%= simple_form_for [@comedian, @booking] do |f| %>
       <div class="d-flex justify-content-between">
-        <%= f.input :start_date, as: :datetime, html5: true, order: %i(day month year), label: "From" %>
-        <%= f.input :end_date, as: :datetime, html5: true, order: %i(day month year), label: "To" %>
+         <%= f.input :start_date, as: :date, html5: true, label: "From" %>
+        <%= f.input :end_date, as: :date, html5: true, label: "To" %>
+        <%#= f.input :start_date, as: :datetime, html5: true, order: %i(day month year), input_html: {id: "range_start"}, label: "From" %>
+        <%#= f.input :end_date, as: :datetime, html5: true, order: %i(day month year), input_html: {id: "range_end"}, label: "To" %>
       </div>
       <div class="d-flex justify-content-end">
         <%= f.submit "Book #{@comedian.name}", class: 'submit-button btn btn-success mr-2' %>

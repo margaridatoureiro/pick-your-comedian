@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# top-level class comment
 class Comedian < ApplicationRecord
   searchkick # searchable: %w[:name :age :content :address]
   # def search_data
@@ -9,9 +12,9 @@ class Comedian < ApplicationRecord
   #     address: address
   #   }
   # end
+  belongs_to :user # the Comedy Agency or the Headhunter (through bookings)
   has_many :bookings, dependent: :destroy
   has_many :reviews, dependent: :destroy
-  belongs_to :user
   has_one_attached :photo
   validates :name, :age, :content, presence: true
   geocoded_by :address

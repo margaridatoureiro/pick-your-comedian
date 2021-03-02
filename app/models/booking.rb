@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# top-level class comment
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :comedian

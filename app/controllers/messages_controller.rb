@@ -9,9 +9,10 @@ class MessagesController < ApplicationController
     @message.user = current_user
     if @message.save
       ChatroomChannel.broadcast_to(@chatroom, render_to_string(partial: 'message', locals: { message: @message }))
-      redirect_to chatroom_path(@chatroom, anchor: "message-#{@message.id}")
+      # redirect_to chatroom_path(@chatroom, anchor: "message-#{@message.id}")
+      redirect_to general_channel_chatrooms_path(anchor: "message-#{@message.id}")
     else
-      render 'chatrooms/show'
+      render 'chatrooms/general_channel'
     end
   end
 

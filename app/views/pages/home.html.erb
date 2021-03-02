@@ -1,16 +1,19 @@
 <div class="home-page-container col-12", style="margin-top: 150px;">
   <div class="row justify-content-center">
-     <div class="superman hero-right col-10 p-4 mb-2" id="first-hero">
-      <div class="d-flex" style="margin: 3vh; background-color: white">
-      <%= image_tag 'superman.jpg', width: 550, height: 750, crop: "fill"%>
-      <div class="p-4">
-        <h1>Are you ready?</h1>
-        <h1>Really ready?</h1>
-        <h1>You're not ready</h1>
-        <h1>Not yet</h1>
-        <h1>But you will be</h1>
-        <h1>Stay tuned</h1>
-        <h1>Looney tuned</h1>
+     <div class="superman hero col-12 p-4 mb-2" id="first-hero">
+      <div class="d-flex justify-content-center" style="margin: 3vh;">
+      <%= image_tag 'superman.jpg', width: 550, height: 750, crop: "fill", class: "hero-picture" %>
+      <div class="text-body">
+        <div class="bubble">
+          <h1>Are you ready?</h1>
+          <h1>Like, <span style="text-decoration: underline; color: black">REALLY</span> ready?</h1>
+          <div class="bubble-arrow-left"></div>
+        </div>
+        <!-- <h1>You're not ready.</h1>
+        <h1>Not <em>yet</em>, at least.</h1>
+        <h1>But you will be.</h1>
+        <h1>Stay tuned...</h1>
+        <h1><em>~Looney tuned~</em></h1> -->
       </div>
       </div>
         <a href="#" class="scroll-down red">
@@ -19,9 +22,23 @@
           </div>
         </a>
     </div>
-    <div class="hero-left col-10 p-4 mb-2 d-flex">
-       <div class="" style="margin: 3vh; background-color: white">
-          <%= image_tag 'flash.jpg', width: 550, height: 750, crop: "fill"%>
+    <div class="hero col-12 p-4 mb-2">
+       <div class="d-flex justify-content-center" style="margin: 3vh;">
+        <div class="text-body">
+          <!-- <h1>Are you ready?</h1>
+          <h1>Like, <span style="text-decoration: underline; color: black">REALLY</span> ready?</h1> -->
+          <div class="bubble">
+            <h1>Are you sure that's your answer?</h1>
+            <h1>There is no going back.</h1>
+            <div class="bubble-arrow-right"></div>
+          </div>
+          <!-- <h1>You're not ready.</h1>
+          <h1>Not <em>yet</em>, at least.</h1> -->
+          <!-- <h1>But you will be.</h1>
+          <h1>Stay tuned...</h1>
+          <h1><em>~Looney tuned~</em></h1> -->
+        </div>
+          <%= image_tag 'flash.jpg', width: 550, height: 750, crop: "fill", class: "hero-picture"%>
        </div>
       <a href="#" class="scroll-down red">
           <div class="arrow-red">
@@ -29,9 +46,21 @@
           </div>
       </a>
     </div>
-    <div class="hero-right col-10 p-4 mb-2">
-       <div style="margin: 3vh; background-color: white">
-      <%= image_tag 'joker_batman_fight.jpg', width: 550, height: 750, crop: "fill"%>
+    <div class="hero col-12 p-4 mb-2">
+       <div class="d-flex justify-content-center" style="margin: 3vh;">
+      <%= image_tag 'joker_batman_fight.jpg', width: 550, height: 750, crop: "fill", class: "hero-picture"%>
+      <div class="text-body">
+        <!-- <h1>Are you ready?</h1>
+        <h1>Like, <span style="text-decoration: underline; color: black">REALLY</span> ready?</h1> -->
+        <div class="bubble">
+          <h1>You FOOL, you're not ready.</h1>
+          <h1>Not <em>yet</em>, at least.</h1>
+          <div class="bubble-arrow-left"></div>
+        </div>
+        <!-- h1>But you will be.</h1>
+        <h1>Stay tuned...</h1>
+        <h1><em>~Looney tuned~</em></h1> -->
+      </div>
     </div>
       <a href="#" class="scroll-down red">
           <div class="arrow-red">
@@ -39,9 +68,22 @@
           </div>
       </a>
     </div>
-    <div class="hero-left col-10 p-4 mb-2 d-flex">
-      <div class="" style="margin: 3vh; background-color: white">
-      <%= image_tag 'harley_queen.jpg', width: 550, height: 750, crop: "fill"%>
+    <div class="hero col-12 p-4 mb-2">
+      <div class="d-flex justify-content-center" style="margin: 3vh;">
+      <div class="text-body">
+        <!-- <h1>Are you ready?</h1>
+        <h1>Like, <span style="text-decoration: underline; color: black">REALLY</span> ready?</h1>
+        <h1>You're not ready.</h1>
+        <h1>Not <em>yet</em>, at least.</h1> -->
+        <div class="bubble">
+          <h1>But you will be.</h1>
+          <h1>Trust me, you will.</h1>
+          <div class="bubble-arrow-right"></div>
+        </div>
+        <!-- <h1>Stay tuned...</h1>
+        <h1><em>~Looney tuned~</em></h1> -->
+      </div>
+      <%= image_tag 'harley_queen.jpg', width: 550, height: 750, crop: "fill", class: "hero-picture"%>
     </div>
       <a href="#" class="scroll-down red">
           <div class="arrow-red">
@@ -49,9 +91,21 @@
           </div>
       </a>
     </div>
-     <div class="hero-right col-10 p-4 mb-2">
-      <div class="" style="margin: 3vh; background-color: white">
-      <%= image_tag 'joaquin_phoenix.jpg', width: 550, height: 750, crop: "fill"%>
+     <div class="hero col-12 p-4 mb-2">
+      <div class="d-flex justify-content-center" style="margin: 3vh;">
+      <%= image_tag 'joaquin_phoenix.jpg', width: 550, height: 750, crop: "fill", class: "hero-picture"%>
+      <div class="text-body">
+        <!-- <h1>Are you ready?</h1>
+        <h1>Like, <span style="text-decoration: underline; color: black">REALLY</span> ready?</h1>
+        <h1>You're not ready.</h1>
+        <h1>Not <em>yet</em>, at least.</h1>
+        <h1>But you will be.</h1> -->
+        <div class="bubble">
+          <h1>When? Stay tuned...</h1>
+          <h1><em>~Looney tuned~</em></h1>
+          <div class="bubble-arrow-left"></div>
+        </div>
+      </div>
     </div>
       <a href="#" class="scroll-down red" id="arrow-bottom">
           <div class="arrow-bottom">
