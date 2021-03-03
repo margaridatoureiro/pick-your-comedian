@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <!-- SQL XML created by WWW SQL Designer, https://github.com/ondras/wwwsqldesigner/ -->
-<!-- Active URL: https://kitt.lewagon.com/db/14481 -->
+<!-- Active URL: https://kitt.lewagon.com/db/26522 -->
+<?xml version="1.0" encoding="utf-8" ?>
 <sql>
 <datatypes db="postgresql">
   <group label="Numeric" color="rgb(238,238,170)">
@@ -41,86 +41,122 @@
     <type label="Inet CIDR Addr" length="0" sql="CIDR" quote="'"/>
     <type label="Geometry" length="0" sql="GEOMETRY" quote="'"/>
   </group>
-</datatypes><table x="459" y="211" name="comedians">
-<row name="id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="name" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
-<default>NULL</default></row>
-<row name="age" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="content" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
-<default>NULL</default></row>
-<row name="average_rating" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<key type="PRIMARY" name="">
-<part>id</part>
-</key>
-</table>
-<table x="737" y="67" name="bookings">
-<row name="id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="start_date" null="1" autoincrement="0">
-<datatype>DATE</datatype>
-<default>NULL</default></row>
-<row name="end_date" null="1" autoincrement="0">
-<datatype>DATE</datatype>
-<default>NULL</default></row>
-<row name="comedian_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="comedians" row="id" />
-</row>
-<row name="user_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="users" row="id" />
-</row>
-<key type="PRIMARY" name="">
-<part>id</part>
-</key>
-</table>
-<table x="1026" y="195" name="users">
-<row name="id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="first_name" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
-<default>NULL</default></row>
-<row name="last_name" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
-<default>NULL</default></row>
-<row name="role" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
-<default>NULL</default></row>
-<key type="PRIMARY" name="">
-<part>id</part>
-</key>
-</table>
-<table x="751" y="385" name="reviews">
-<row name="id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="rating" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="comment" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
-<default>NULL</default></row>
-<row name="comedian_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="comedians" row="id" />
-</row>
-<row name="user_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="users" row="id" />
-</row>
-<key type="PRIMARY" name="">
-<part>id</part>
-</key>
-</table>
+</datatypes><table x="443" y="175" name="comedians">
+  <row name="id" null="1" autoincrement="1">
+  <datatype>INTEGER</datatype>
+  <default>NULL</default></row>
+  <row name="name" null="1" autoincrement="0">
+  <datatype>VARCHAR</datatype>
+  <default>NULL</default></row>
+  <row name="age" null="1" autoincrement="0">
+  <datatype>INTEGER</datatype>
+  <default>NULL</default></row>
+  <row name="content" null="1" autoincrement="0">
+  <datatype>VARCHAR</datatype>
+  <default>NULL</default></row>
+  <row name="address" null="1" autoincrement="0">
+  <datatype>VARCHAR</datatype>
+  <default>NULL</default></row>
+  <row name="average_rating" null="1" autoincrement="0">
+  <datatype>INTEGER</datatype>
+  <default>NULL</default></row>
+  <row name="user_id" null="1" autoincrement="0">
+  <datatype>INTEGER</datatype>
+  <default>NULL</default><relation table="users" row="id" />
+  </row>
+  <key type="PRIMARY" name="">
+  <part>id</part>
+  </key>
+  </table>
+  <table x="737" y="67" name="bookings">
+  <row name="id" null="1" autoincrement="1">
+  <datatype>INTEGER</datatype>
+  <default>NULL</default></row>
+  <row name="start_date" null="1" autoincrement="0">
+  <datatype>DATE</datatype>
+  <default>NULL</default></row>
+  <row name="end_date" null="1" autoincrement="0">
+  <datatype>DATE</datatype>
+  <default>NULL</default></row>
+  <row name="comedian_id" null="1" autoincrement="0">
+  <datatype>INTEGER</datatype>
+  <default>NULL</default><relation table="comedians" row="id" />
+  </row>
+  <row name="user_id" null="1" autoincrement="0">
+  <datatype>INTEGER</datatype>
+  <default>NULL</default><relation table="users" row="id" />
+  </row>
+  <key type="PRIMARY" name="">
+  <part>id</part>
+  </key>
+  </table>
+  <table x="1026" y="195" name="users">
+  <row name="id" null="1" autoincrement="1">
+  <datatype>INTEGER</datatype>
+  <default>NULL</default></row>
+  <row name="first_name" null="1" autoincrement="0">
+  <datatype>VARCHAR</datatype>
+  <default>NULL</default></row>
+  <row name="last_name" null="1" autoincrement="0">
+  <datatype>VARCHAR</datatype>
+  <default>NULL</default></row>
+  <row name="role" null="1" autoincrement="0">
+  <datatype>VARCHAR</datatype>
+  <default>NULL</default></row>
+  <key type="PRIMARY" name="">
+  <part>id</part>
+  </key>
+  </table>
+  <table x="751" y="385" name="reviews">
+  <row name="id" null="1" autoincrement="1">
+  <datatype>INTEGER</datatype>
+  <default>NULL</default></row>
+  <row name="rating" null="1" autoincrement="0">
+  <datatype>INTEGER</datatype>
+  <default>NULL</default></row>
+  <row name="comment" null="1" autoincrement="0">
+  <datatype>VARCHAR</datatype>
+  <default>NULL</default></row>
+  <row name="comedian_id" null="1" autoincrement="0">
+  <datatype>INTEGER</datatype>
+  <default>NULL</default><relation table="comedians" row="id" />
+  </row>
+  <row name="user_id" null="1" autoincrement="0">
+  <datatype>INTEGER</datatype>
+  <default>NULL</default><relation table="users" row="id" />
+  </row>
+  <key type="PRIMARY" name="">
+  <part>id</part>
+  </key>
+  </table>
+  <table x="1464" y="72" name="chatrooms">
+  <row name="id" null="1" autoincrement="1">
+  <datatype>INTEGER</datatype>
+  <default>NULL</default></row>
+  <row name="name" null="1" autoincrement="0">
+  <datatype>VARCHAR</datatype>
+  <default>NULL</default></row>
+  <key type="PRIMARY" name="">
+  <part>id</part>
+  </key>
+  </table>
+  <table x="1280" y="221" name="messages">
+  <row name="id" null="1" autoincrement="1">
+  <datatype>INTEGER</datatype>
+  <default>NULL</default></row>
+  <row name="content" null="1" autoincrement="0">
+  <datatype>VARCHAR</datatype>
+  <default>NULL</default></row>
+  <row name="user_id" null="1" autoincrement="0">
+  <datatype>INTEGER</datatype>
+  <default>NULL</default><relation table="users" row="id" />
+  </row>
+  <row name="chatroom_id" null="1" autoincrement="0">
+  <datatype>INTEGER</datatype>
+  <default>NULL</default><relation table="chatrooms" row="id" />
+  </row>
+  <key type="PRIMARY" name="">
+  <part>id</part>
+  </key>
+  </table>
 </sql>
-
