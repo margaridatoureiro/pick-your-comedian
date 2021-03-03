@@ -2,7 +2,9 @@
 
 # top-level class comment
 class Comedian < ApplicationRecord
-  searchkick # searchable: %w[:name :age :content :address]
+  # searchkick # UNCOMMENT ONLY THIS LINE TO USE SEARCHKICK
+  # --------------------------------
+  # searchable: %w[:name :age :content :address]
   # def search_data
   #   {
   #     name: name,
@@ -12,6 +14,13 @@ class Comedian < ApplicationRecord
   #     address: address
   #   }
   # end
+  # -------------------------------
+  include PgSearch::Model
+  pg_search_scope :search_by_name_and_content_and_age_and_address_and_average_rating,
+                  against: [:name, :age, :content, :average_rating.to_s, :address],
+                  using: {
+                    tsearch: { prefix: true } # <-- now `superman batm` will return something!
+                  }
   belongs_to :user # the Comedy Agency or the Headhunter (through bookings)
   has_many :bookings, dependent: :destroy
   has_many :reviews, dependent: :destroy

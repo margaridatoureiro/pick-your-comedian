@@ -6,8 +6,16 @@ class ComediansController < ApplicationController
   before_action :fetch_comedian, only: %i[show edit update destroy]
   def index
     # Comedian.reindex
+    # ------------------------
+    # UNCOMMENT BELOW FOR SEARCHKICK
+    # if params[:query].present?
+    #   @comedians = Comedian.search params[:query]
+    # else
+    #   @comedians = Comedian.all
+    # end
+    # ------------------------
     if params[:query].present?
-      @comedians = Comedian.search params[:query]
+      @comedians = Comedian.search_by_name_and_content_and_age_and_address_and_average_rating(params[:query])
     else
       @comedians = Comedian.all
     end
