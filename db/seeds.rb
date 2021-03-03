@@ -21,33 +21,36 @@ puts 'Destroying associated reviews, bookings and messages as well'
 User.destroy_all
 
 user_agency = User.create(email: 'drheinzdooferschmitz@email.com', password: '111111', first_name: 'Dr. Heinz',
-                          last_name: 'Dooferschmitz', role: 'Comedy Agency', nikcname: 'iloveperry')
+                          last_name: 'Dooferschmitz', role: 'Comedy Agency', nickname: 'iloveperry')
 user_headhunter = User.create(email: 'margaridatoureiro@gmail.com', password: '111111', first_name: 'Margarida',
-                              last_name: 'Toureiro', role: 'Headhunter', nikcname: 'margaridatoureiro')
+                              last_name: 'Toureiro', role: 'Headhunter', nickname: 'margaridatoureiro')
 puts 'Created the 2 mastermind users'
 
 puts 'Destroying all humourless nutjobs'
 Comedian.destroy_all
 
 lip = Comedian.create(name: 'Lip Gallagher', age: 25, content: 'I think the answer to that question,
-                      like the answer to most questions, is fuck you', user_id: user_agency.id)
+                      like the answer to most questions, is fuck you',
+                      address: '2119 S Homan Ave, Chicago IL', user_id: user_agency.id)
 mickey = Comedian.create(name: 'Mickey Milkovich', age: 26, content: "Well this ain't Macy's, bitch,
-                        you ain't window shopping", user_id: user_agency.id)
+                        you ain't window shopping", address: '2119 S Homan Ave, Chicago IL', user_id: user_agency.id)
 raven = Comedian.create(name: 'Raven Baxter', age: 16, content: "It is the unknown we fear when we look upon death and
-                        darkness, nothing more. YUP THAT'S ME", user_id: user_agency.id)
-shane = Comedian.create(name: 'Shane Dawson', age: 31, content: Faker::Movies::HarryPotter.quote, user_id: user_agency.id)
-Comedian.create(name: 'Joe Exotic (aka "Tiger King")', age: 57, content: "Carole Baskin, killed her
-                            husband, wacked him, can't convince me that it didn't happen,
-                              fed him to tigers they snackin, what's happenin? CAROLE BASKIN!", user_id: user_agency.id)
+                        darkness, nothing more. YUP THAT'S ME",
+                        address: '461 Ashbury Street San Francisco, CA 94117', user_id: user_agency.id)
+shane = Comedian.create(name: 'Shane Dawson', age: 31, content: Faker::Movies::HarryPotter.quote,
+                        address: 'Los Angeles, California', user_id: user_agency.id)
+Comedian.create(name: 'Joe Exotic (aka "Tiger King")', age: 57, content: "Carole Baskin, killed her husband, wacked him,
+                can't convince me that it didn't happen, fed him to tigers they snackin, what's happenin? CAROLE
+                BASKIN!", address: 'Wynnewood, Oklahoma', user_id: user_agency.id)
 Comedian.create(name: 'Ellen Degeneres', age: 42, content: "I have a rule: if the temperature is less than my age,
-                I don't get out of bed", user_id: user_agency.id)
+                I don't get out of bed", address: Faker::Address.street_address, user_id: user_agency.id)
 Comedian.create(name: 'Mike Wazowski', age: 21, content: "I know, I'm so romantic. Sometimes
-              I think I should marry myself", user_id: user_agency.id)
-Comedian.create(name: 'Ricky Sanchez', age: 65, content: 'Roses are red, love is fake,
-              weddings are basically funerals with cake', user_id: user_agency.id)
+              I think I should marry myself", address: Faker::Address.street_address, user_id: user_agency.id)
+Comedian.create(name: 'Ricky Sanchez', age: 65, content: 'Roses are red, love is fake, weddings are basically
+                funerals with cake', address: Faker::Address.street_address, user_id: user_agency.id)
 7.times do
-  Comedian.create(name: Faker::FunnyName.name, age: rand(18..79),
-                  content: Faker::Movies::HarryPotter.quote, user_id: user_agency.id)
+  Comedian.create(name: Faker::FunnyName.name, age: rand(18..79), content: Faker::Movies::HarryPotter.quote,
+                  address: Faker::Address.street_address, user_id: user_agency.id)
 end
 puts 'Shamelessly invoking some memorable jokers who are NOT prone to murder, thank you very much'
 

@@ -9,8 +9,8 @@ class User < ApplicationRecord
 
   # validates :first_name, :last_name, :role, presence: true
   has_many :messages, dependent: :destroy
-  has_many :comedians # as a Comedy Agency
   has_many :bookings, dependent: :destroy # as a Headhunter
   has_many :reviews, dependent: :destroy # as a Headhunter
+  has_many :comedians # as a Comedy Agency
   has_many :comedians, through: :bookings, dependent: :destroy # as a Headhunter
 end
