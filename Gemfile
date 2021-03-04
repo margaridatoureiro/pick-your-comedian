@@ -3,7 +3,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 
-# gem 'turbolinks_render'
 gem 'geocoder'
 gem 'autoprefixer-rails'
 gem 'cloudinary', '~> 1.12.0'
@@ -31,6 +30,8 @@ gem 'turbolinks', '~> 5.2.0'
 gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 4.0'
+gem "rack", ">= 2.2.3"
+gem "activerecord", ">= 6.0.3.5"
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
