@@ -9,9 +9,9 @@ default: &default
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
-  encoding: utf8
+  #encoding: utf8
   # min_messages: warning
-  socket: /tmp/.s.PGSQL.5432
+  #socket: /tmp/.s.PGSQL.5432
 
 development:
   <<: *default
