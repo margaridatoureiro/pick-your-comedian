@@ -2,7 +2,6 @@ en:
   simple_form:
     "yes": 'Yes'
     "no": 'No'
-    # something
     # eng:
     # date:
     #   order:
