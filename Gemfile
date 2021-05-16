@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'redis', '~> 4.0'
 gem "rack", ">= 2.2.3"
 gem "activerecord", ">= 6.0.3.5"
+gem "actionpack", ">= 6.0.3.7"
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
