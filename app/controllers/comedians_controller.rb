@@ -17,7 +17,7 @@ class ComediansController < ApplicationController
     if params[:query].present?
       @comedians = Comedian.search_by_name_and_content_and_age_and_address_and_average_rating(params[:query])
     else
-      @comedians = Comedian.all
+      @comedians = Comedian.all.order("id ASC")
     end
   end
 
