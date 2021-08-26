@@ -14,7 +14,7 @@ gem 'simple_form'
 # gem 'searchkick', '~> 3.0'
 gem 'pg_search', '~> 2.3.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.3', '>= 6.0.3.1'
+gem 'rails', '~> 6.1.4'
 # Use postgreSQL as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
